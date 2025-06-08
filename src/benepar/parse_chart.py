@@ -183,7 +183,7 @@ class ChartParser(nn.Module, parse_base.BaseParser):
 
         config["hparams"] = nkutil.HParams(**hparams)
         parser = cls(**config)
-        parser.load_state_dict(state_dict)
+        parser.load_state_dict(state_dict, strict=False)
         return parser
 
     def encode(self, example):
